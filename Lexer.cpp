@@ -10,21 +10,18 @@ namespace Parser {
 			char current = peek(0);
 
 			if (isdigit(current)) tokenizeNumber();
-			else if (operatorsMap.find(current) != operatorsMap.end())
-				tokenizeOperator();
-			else {
-				next(); // пробел/табул€ци€
-			}
+			else if (operatorsMap.find(current) != operatorsMap.end()) tokenizeOperator();
+			else next(); // пробел/табул€ци€
 		}
 		return tokens;
 	}
 
 	void Lexer::tokenizeNumber() {
 		string buffer;
-		char current = peek(0);
 
 		while (true) {
-			if (isdigit(peek(0))) {
+			char current = peek(0);
+			if (isdigit(current)) {
 				buffer += current;
 				next();
 			}

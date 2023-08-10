@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	string input = "2 + 2";
+	string input = "2 + 3 * 10";
 	Parser::Lexer lexer(input);
 	list<Parser::Token> tokens = lexer.tokenize();
 
