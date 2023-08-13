@@ -4,10 +4,10 @@
 #include <list>
 using namespace std;
 
-namespace Parser {
-	list<Parser::Token> Lexer::tokenize() {
+namespace Parsing {
+	list<Parsing::Token> Lexer::tokenize() {
 		while (pos < length){
-			char current = peek(0);
+			char current = peek();
 
 			if (isdigit(current)) tokenizeNumber();
 			else if (operatorsMap.find(current) != operatorsMap.end()) tokenizeOperator();
@@ -20,7 +20,7 @@ namespace Parser {
 		string buffer;
 
 		while (true) {
-			char current = peek(0);
+			char current = peek();
 			if (isdigit(current)) {
 				buffer += current;
 				next();
@@ -29,14 +29,15 @@ namespace Parser {
 		}
 		addToken(TokenType::NUMBER, buffer);
 	}
+
 	void Lexer::tokenizeOperator() {
-		addToken(operatorsMap.at(peek(0)));
+		addToken(operatorsMap.at(peek()));
 		next();
 	}
 
 	char Lexer::next() {
 		pos++;
-		return peek(0);
+		return peek();
 	}
 	char Lexer::peek(int relativePosition) {
 		const int position = pos + relativePosition;
@@ -46,6 +47,6 @@ namespace Parser {
 	}
 
 	void Lexer::addToken(TokenType type, string text) {
-		Lexer::tokens.push_back(Parser::Token(type, text));
+		Lexer::tokens.push_back(Parsing::Token(type, text));
 	}
 }

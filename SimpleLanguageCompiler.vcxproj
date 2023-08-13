@@ -127,11 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BinaryExpression.cpp" />
+    <ClCompile Include="Expression.hpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="NumberExpression.cpp" />
+    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="UnaryExpression.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lexer.hpp" />
+    <ClInclude Include="Parser.hpp" />
     <ClInclude Include="Token.hpp" />
     <ClInclude Include="TokenType.hpp" />
   </ItemGroup>

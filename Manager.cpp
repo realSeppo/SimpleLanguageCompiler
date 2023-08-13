@@ -1,16 +1,28 @@
 ﻿#include <iostream>
 #include <string>
 #include "Lexer.hpp"
+#include <list>
+#include "Expression.hpp"
+#include "Parser.hpp"
 using namespace std;
+using namespace ast;
+using namespace Parsing;
 
 int main()
 {
-	string input = "2 + 3 * 10";
-	Parser::Lexer lexer(input);
-	list<Parser::Token> tokens = lexer.tokenize();
+	string input = "(2 + 2) * -2";
+	Lexer lexer(input);
+	list<Token> tokens = lexer.tokenize();
 
-	for (Parser::Token& token : tokens) {
+	for (Token& token : tokens) {
 		cout << "Token: " + token.to_string() << endl;
 	}
+
+	list<Expression*> expressions = Parser(tokens).parse();
+
+	for (Expression* expr : expressions) {
+		cout << "Expression: " << to_string(expr->eval()) << endl;
+	}
+
 	return 0;
 }

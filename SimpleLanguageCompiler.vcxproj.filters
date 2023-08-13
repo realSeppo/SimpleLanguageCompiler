@@ -9,15 +9,21 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Исходные файлы\Parser">
-      <UniqueIdentifier>{3d901283-b277-455a-9d2f-a9733c295728}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы ресурсов">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы заголовков\Parser">
+    <Filter Include="Исходные файлы\Parsing">
+      <UniqueIdentifier>{3d901283-b277-455a-9d2f-a9733c295728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Parsing">
       <UniqueIdentifier>{2d3fc4c3-a09f-4962-bc23-e013fa22a752}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Parsing\Ast">
+      <UniqueIdentifier>{fa85bcc3-4741-4fae-a427-9c32a9be55a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Parsing\Ast">
+      <UniqueIdentifier>{6fd4ed48-f345-4cd3-a791-0f1a4f7a1a05}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -25,18 +31,36 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Lexer.cpp">
-      <Filter>Исходные файлы\Parser</Filter>
+      <Filter>Исходные файлы\Parsing</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>Исходные файлы\Parsing</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberExpression.cpp">
+      <Filter>Исходные файлы\Parsing\Ast</Filter>
+    </ClCompile>
+    <ClCompile Include="Expression.hpp">
+      <Filter>Файлы заголовков\Parsing\Ast</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryExpression.cpp">
+      <Filter>Исходные файлы\Parsing\Ast</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryExpression.cpp">
+      <Filter>Исходные файлы\Parsing\Ast</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lexer.hpp">
-      <Filter>Файлы заголовков\Parser</Filter>
+      <Filter>Файлы заголовков\Parsing</Filter>
     </ClInclude>
     <ClInclude Include="TokenType.hpp">
-      <Filter>Файлы заголовков\Parser</Filter>
+      <Filter>Файлы заголовков\Parsing</Filter>
     </ClInclude>
     <ClInclude Include="Token.hpp">
-      <Filter>Файлы заголовков\Parser</Filter>
+      <Filter>Файлы заголовков\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.hpp">
+      <Filter>Файлы заголовков\Parsing</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

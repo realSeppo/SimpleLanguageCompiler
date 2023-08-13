@@ -4,7 +4,7 @@
 #include <map>
 using namespace std;
 
-namespace Parser {
+namespace Parsing {
 	class Token final {
 	private:
 		string text;
