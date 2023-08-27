@@ -25,6 +25,18 @@
     <Filter Include="Файлы заголовков\Parsing\Ast">
       <UniqueIdentifier>{6fd4ed48-f345-4cd3-a791-0f1a4f7a1a05}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Parsing\Ast\Expressions">
+      <UniqueIdentifier>{852764ef-31f6-4abb-a5b1-8d80c3357225}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Parsing\Ast\Statements">
+      <UniqueIdentifier>{6280e5e1-9e1c-4cd8-b60c-c115999a2f06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Libs">
+      <UniqueIdentifier>{6795ca52-77d1-4f6c-8d09-4f57fb8066a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Libs">
+      <UniqueIdentifier>{9eb39869-77d5-4338-9a3b-00429699326f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Manager.cpp">
@@ -36,17 +48,32 @@
     <ClCompile Include="Parser.cpp">
       <Filter>Исходные файлы\Parsing</Filter>
     </ClCompile>
-    <ClCompile Include="NumberExpression.cpp">
-      <Filter>Исходные файлы\Parsing\Ast</Filter>
-    </ClCompile>
     <ClCompile Include="Expression.hpp">
       <Filter>Файлы заголовков\Parsing\Ast</Filter>
     </ClCompile>
+    <ClCompile Include="Statement.hpp">
+      <Filter>Файлы заголовков\Parsing\Ast</Filter>
+    </ClCompile>
     <ClCompile Include="BinaryExpression.cpp">
-      <Filter>Исходные файлы\Parsing\Ast</Filter>
+      <Filter>Исходные файлы\Parsing\Ast\Expressions</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberExpression.cpp">
+      <Filter>Исходные файлы\Parsing\Ast\Expressions</Filter>
     </ClCompile>
     <ClCompile Include="UnaryExpression.cpp">
-      <Filter>Исходные файлы\Parsing\Ast</Filter>
+      <Filter>Исходные файлы\Parsing\Ast\Expressions</Filter>
+    </ClCompile>
+    <ClCompile Include="AssignmentStatement.cpp">
+      <Filter>Исходные файлы\Parsing\Ast\Statements</Filter>
+    </ClCompile>
+    <ClCompile Include="VariableExpression.cpp">
+      <Filter>Исходные файлы\Parsing\Ast\Expressions</Filter>
+    </ClCompile>
+    <ClCompile Include="Variables.cpp">
+      <Filter>Исходные файлы\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintStatement.cpp">
+      <Filter>Исходные файлы\Parsing\Ast\Statements</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="Parser.hpp">
       <Filter>Файлы заголовков\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="Variables.hpp">
+      <Filter>Файлы заголовков\Libs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

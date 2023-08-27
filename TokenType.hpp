@@ -3,7 +3,10 @@
 namespace Parsing {
     enum class TokenType {
         NUMBER,
-        HEX_NUMBER,
+
+        WORD,
+
+        PRINT,
 
         PLUS,
         MINUS,
@@ -12,6 +15,8 @@ namespace Parsing {
 
         LPAREN, // (
         RPAREN, // )
+        
+        SET,
 
         FILEEND
     };

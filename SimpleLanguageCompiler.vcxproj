@@ -127,19 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AssignmentStatement.cpp" />
     <ClCompile Include="BinaryExpression.cpp" />
     <ClCompile Include="Expression.hpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="NumberExpression.cpp" />
     <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="PrintStatement.cpp" />
+    <ClCompile Include="Statement.hpp" />
     <ClCompile Include="UnaryExpression.cpp" />
+    <ClCompile Include="VariableExpression.cpp" />
+    <ClCompile Include="Variables.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lexer.hpp" />
     <ClInclude Include="Parser.hpp" />
     <ClInclude Include="Token.hpp" />
     <ClInclude Include="TokenType.hpp" />
+    <ClInclude Include="Variables.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

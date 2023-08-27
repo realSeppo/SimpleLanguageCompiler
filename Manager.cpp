@@ -10,7 +10,7 @@ using namespace Parsing;
 
 int main()
 {
-	string input = "(2 + 2) * -2";
+	string input = "varA = 100 * PI	varB = 10 print varA - varB";
 	Lexer lexer(input);
 	list<Token> tokens = lexer.tokenize();
 
@@ -18,11 +18,11 @@ int main()
 		cout << "Token: " + token.to_string() << endl;
 	}
 
-	list<Expression*> expressions = Parser(tokens).parse();
+	list<Statement*> statements = Parser(tokens).parse();
 
-	for (Expression* expr : expressions) {
-		cout << "Expression: " << to_string(expr->eval()) << endl;
+	for (Statement* statement : statements) {
+		//cout << statement->toString() << endl;
+		statement->execute();
 	}
-
 	return 0;
 }

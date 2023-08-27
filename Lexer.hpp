@@ -18,6 +18,7 @@ namespace Parsing {
 		char next();
 		char peek(int relativePosition = 0);
 
+		void tokenizeWord();
 		void tokenizeNumber();
 		void tokenizeOperator();
 
@@ -31,6 +32,7 @@ namespace Parsing {
 			operatorsMap['/'] = TokenType::SLASH;
 			operatorsMap['('] = TokenType::LPAREN;
 			operatorsMap[')'] = TokenType::RPAREN;
+			operatorsMap['='] = TokenType::SET;
 		}
 		
 		list<Parsing::Token> tokenize();

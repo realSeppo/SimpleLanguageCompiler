@@ -3,6 +3,8 @@
 #include "Token.hpp"
 #include "Expression.hpp"
 #include "TokenType.hpp"
+#include "Statement.hpp"
+#include "AssignmentStatement.cpp"
 using namespace ast;
 
 namespace Parsing {
@@ -13,6 +15,9 @@ namespace Parsing {
 		const int size;
 		int pos;
 
+		Statement* statement();
+		Statement* assigmentStatement();
+
 		Expression* expression();
 		Expression* additive();
 		Expression* multiplicative();
@@ -20,6 +25,7 @@ namespace Parsing {
 		Expression* primary();
 
 		Token get(int relativePosition = 0);
+		bool consume(TokenType type);
 		bool match(TokenType type);
 	public:
 		Parser(list<Token> tokens) : tokens(tokens),
@@ -27,6 +33,6 @@ namespace Parsing {
 			pos(0),
 			FILEEND(Token(TokenType::FILEEND, "")) {}
 
-		list<Expression*> parse();
+		list<Statement*> parse();
 	};
 }
