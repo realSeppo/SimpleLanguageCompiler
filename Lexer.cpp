@@ -10,10 +10,11 @@ namespace Parsing {
 		while (pos < length) {
 			char current = peek();
 
+			//перевод кода в токены
 			if (isdigit(current)) tokenizeNumber();
 			else if (isalpha(current)) tokenizeWord();
 			else if (operatorsMap.find(current) != operatorsMap.end()) tokenizeOperator();
-			else next(); // пробел/табуляция
+			else next(); //пропуск пробела/табуляции
 		}
 		return tokens;
 	}
@@ -68,7 +69,7 @@ namespace Parsing {
 		pos++;
 		return peek();
 	}
-	char Lexer::peek(int relativePosition) {
+	char Lexer::peek(int relativePosition) { //получение буквы по относительной позиции
 		const int position = pos + relativePosition;
 
 		if (position >= length) return '\0';

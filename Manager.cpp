@@ -10,19 +10,18 @@ using namespace Parsing;
 
 int main()
 {
-	string input = "varA = 100 * PI	varB = 10 print varA - varB";
-	Lexer lexer(input);
-	list<Token> tokens = lexer.tokenize();
+	string input = "varA = 100 * PI	varB = 10 print varA - varB"; //код
+	list<Token> tokens = Lexer(input).tokenize(); // перевод кода в токены (enum с ними в TokenType.hpp)
 
 	for (Token& token : tokens) {
-		cout << "Token: " + token.to_string() << endl;
+		cout << "Token: " + token.to_string() << endl; //вывод информации о токенах
 	}
 
-	list<Statement*> statements = Parser(tokens).parse();
+	list<Statement*> statements = Parser(tokens).parse(); //получение операторов
 
 	for (Statement* statement : statements) {
-		//cout << statement->toString() << endl;
-		statement->execute();
+		cout << statement->toString() << endl; //вывод информации об операторах
+		statement->execute(); //выполнение оператора, например, присвоение переменной
 	}
 	return 0;
 }

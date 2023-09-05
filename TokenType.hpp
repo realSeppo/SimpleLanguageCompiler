@@ -2,11 +2,11 @@
 
 namespace Parsing {
     enum class TokenType {
-        NUMBER,
+        NUMBER, //число
 
-        WORD,
+        WORD, //переменные
 
-        PRINT,
+        PRINT, //оператор вывода
 
         PLUS,
         MINUS,
@@ -16,8 +16,8 @@ namespace Parsing {
         LPAREN, // (
         RPAREN, // )
         
-        SET,
+        SET, //оператор присвоения значения переменной
 
-        FILEEND
+        FILEEND //окончание файла
     };
 }

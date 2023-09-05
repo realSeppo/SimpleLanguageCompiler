@@ -16,6 +16,7 @@ namespace Parsing {
     list<Statement*> Parser::parse() {
         list<Statement*> result;
 
+        //начало поиска операторов
         while (!match(TokenType::FILEEND)) {
             result.push_back(statement());
         }
